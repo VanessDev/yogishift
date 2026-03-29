@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: node:20
+    container_name: yogishift_front
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host"
+    stdin_open: true
+    tty: true
+
+  backend:
+    build: ./backend
+    container_name: yogishift_back
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    command: php -S 0.0.0.0:8000 -t public
+
+  db:
+    image: mysql:8
+    container_name: yogishift_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: yogishift
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
