@@ -1,10 +1,25 @@
-Yogishift
+# Yogishift
 
 Yogishift est mon projet de fin d’année.
-L’objectif est de créer une plateforme autour du yoga qui permet de consulter des offres, gérer des profils et connecter différents acteurs du milieu.
+L’idée est de créer une plateforme autour du yoga qui permet de consulter des offres, connecter des studios et des professeurs, et gérer différentes interactions comme dans une vraie application métier.
 
-Le projet est construit avec un front en React, un back en Symfony et une base de données MySQL.
-Tout est lancé avec Docker pour simplifier l’installation.
+Ce projet m’a permis de travailler sur une architecture complète avec un front, un back et une base de données.
+
+Stack technique
+
+Le front est développé avec React et Vite pour avoir une interface rapide et moderne.
+Le back est construit avec Symfony pour gérer l’API et la logique métier.
+La base de données est en MySQL.
+L’ensemble du projet est lancé avec Docker pour simplifier l’installation et garantir que tout fonctionne de la même façon sur toutes les machines.
+
+Objectifs du projet
+
+L’objectif principal est de mettre en place une application complète avec une architecture claire front / back.
+J’ai aussi voulu apprendre à connecter une API à une base de données réelle et structurer les données correctement.
+Le projet inclut la mise en place de routes API, la récupération des données côté front et une organisation propre du code.
+L’idée est de se rapprocher d’un projet professionnel, avec des outils et une logique utilisés en entreprise.
+
+Installation du projet
 
 Je vais expliquer comment installer et lancer le projet étape par étape.
 
@@ -56,5 +71,3 @@ Pour arrêter le projet :
 docker compose down
 
 Ce projet utilise Docker pour garantir que tout fonctionne de la même façon sur toutes les machines, sans configuration complexe.
-
-Il s’inscrit dans une logique de développement moderne avec séparation front / back, utilisation d’une API et gestion de base de données relationnelle.
