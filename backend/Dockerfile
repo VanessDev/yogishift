@@ -1,9 +1,12 @@
-FROM php:8.4-cli
-
-# Installer extensions MySQL
-RUN docker-php-ext-install pdo pdo_mysql
-
-# Installer git + unzip (utile Symfony)
-RUN apt-get update && apt-get install -y git unzip
+FROM node:20-alpine
 
 WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]

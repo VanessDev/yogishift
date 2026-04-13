@@ -1,4 +1,4 @@
-version: "3.9"
+
 
 services:
   frontend:
@@ -14,14 +14,18 @@ services:
     tty: true
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
     container_name: yogishift_back
     working_dir: /app
     volumes:
       - ./backend:/app
+      - /app/node_modules
     ports:
-      - "8000:8000"
-    command: php -S 0.0.0.0:8000 -t public
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+    command: npm run dev
 
   db:
     image: mysql:8
