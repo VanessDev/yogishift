@@ -1,5 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
 .env
 .env.local
-.env.*
-node_modules
-vendor
+.env.*.local
+
+# Build / dist
+dist/
+build/
+.vite/
+
+# Logs
+logs/
+*.log
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+
+
+# Docker
+docker-data/
+*.pid
+
+
+# Misc
+coverage/
+.tmp/
+.cache/
